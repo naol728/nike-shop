@@ -1,5 +1,5 @@
 import { shoe8 } from "../assets/images";
-import { Button } from "../components";
+import { Button } from "../componets"
 
 const SuperQuality = () => {
   return (
