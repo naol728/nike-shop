@@ -1,45 +1,38 @@
-import { Nav } from "./componets";
-import {
-  CustomerReviews,
-  Footer,
-  Hero,
-  PopularProducts,
-  Services,
-  SpecialOffer,
-  Subscribe,
-  SuperQuality,
-} from "./sections";
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import './App.css'
+import LandingPage from './pages/LandingPage/LandingPage'
+import SignIn from './pages/SignIn/SignIn'
+import SignUp from './pages/SignUp/SignUp'
+import DashBoard from './pages/DashBoard/DashBoard';
+import LinkManagment from './components/LinkManagment/LinkManagment';
+import Appearance from './components/Appearance/appearance'
+import Analytics from './components/Analytics/analytics'
 
-const App = () => {
+function App() {
   return (
-    <main className='relative'>
-      <Nav />
-      <section className='xl:padding-l wide:padding-r padding-b'>
-        <Hero />
-      </section>
-      <section className='padding'>
-        <PopularProducts />
-      </section>
-      <section className='padding'>
-        <SuperQuality />
-      </section>
-      <section className='padding-x py-10'>
-        <Services />
-      </section>
-      <section className='padding'>
-        <SpecialOffer />
-      </section>
-      <section className='bg-pale-blue padding'>
-        <CustomerReviews />
-      </section>
-      <section className='padding-x sm:py-32 py-16 w-full'>
-        <Subscribe />
-      </section>
-      <section className=' bg-black padding-x padding-t pb-8'>
-        <Footer />
-      </section>
-    </main>
-  );
-};
+    <Router >
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp/>} />
+        <Route path="/dashboard" element={<DashBoard/>} />
+        <Route path="/links" element={<LinkManagment/>} />
+        <Route path="/appearance" element={<Appearance/>} />
+        <Route path="/analytics" element={<Analytics/>} />
+      </Routes>
+    </Router>
+  )
+}
 
-export default App;
+export default App
+
+
+
+
+
+
+
+
+
+
+
